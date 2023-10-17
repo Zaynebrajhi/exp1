@@ -1,1 +1,7 @@
 
+services:
+   spring-boot-app:
+      image: devopsexp1
+      ports:
+         - "8084:8080"
+
