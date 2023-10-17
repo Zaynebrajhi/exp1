@@ -1,7 +1,7 @@
 
 services:
    spring-boot-app:
-      image: devopsexp1
+      image: backend-master
       ports:
          - "8084:8080"
 
