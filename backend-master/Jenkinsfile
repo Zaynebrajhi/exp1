@@ -13,14 +13,15 @@ tools{
    
         stage("clone repo") {
             steps {
-                sh "git clone https://github.com/Zaynebrajhi/exp1.git"
+                sh "git clone https://github.com/Zaynebrajhi/exp1/backend-master"
+
             }
         }
    
 
         stage("Generate backend image") {
             steps {
-                dir ("devopsexp1"){
+                dir ("backend-master"){
                     sh "mvn clean install"
                     sh "docker build -t devopsexp1 ."
                 }
@@ -30,7 +31,7 @@ tools{
    
         stage("Run docker compose") {
             steps {
-                dir("devopsexp1"){
+                dir("backend-master"){
                 sh "docker compose up -d"
             }
         }
