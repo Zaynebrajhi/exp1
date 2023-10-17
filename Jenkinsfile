@@ -23,7 +23,7 @@ tools{
             steps {
                 dir ("backend-master"){
                     sh "mvn clean install"
-                    sh "docker build -t devopsexp1 ."
+                    sh "docker build -t backend-master ."
                 }
             }
         }
