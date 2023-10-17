@@ -1,7 +1,26 @@
-
 services:
-   spring-boot-app:
-      image: backend-master
-      ports:
-         - "8084:8080"
-
+  spring-boot-app:
+    image: devops2
+    ports:
+      - "8091:8091"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/api_etudiant
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - spring.jpa.hibernate.ddl-auto=update
+      - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'api_etudiant'
+      MYSQL_ROOT_USERNAME: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - "3306:3306"
+    volumes:
+      - api_etudiant:/var/lib/mysql
+volumes:
+    api_etudiant:
