@@ -1,6 +1,8 @@
 services:
   spring-boot-app:
-    image: devops2
+    image:backend-master
+
+
     ports:
       - "8091:8091"
     environment:
