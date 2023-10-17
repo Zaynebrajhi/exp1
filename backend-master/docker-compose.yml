@@ -1,8 +1,6 @@
 services:
   spring-boot-app:
     image: backend-master
-
-
     ports:
       - "8091:8091"
     environment:
