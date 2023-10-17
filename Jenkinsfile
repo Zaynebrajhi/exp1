@@ -13,7 +13,7 @@ tools{
    
         stage("clone repo") {
             steps {
-                sh "git clone https://github.com/Zaynebrajhi/exp1/backend-master"
+                sh "git clone https://github.com/Zaynebrajhi/exp1"
 
             }
         }
