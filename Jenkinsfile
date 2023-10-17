@@ -21,7 +21,7 @@ tools{
 
         stage("Generate backend image") {
             steps {
-                dir ("backend-master"){
+                dir ("exp1/backend-master"){
                     sh "mvn clean install"
                     sh "docker build -t backend-master ."
                 }
@@ -31,7 +31,7 @@ tools{
    
         stage("Run docker compose") {
             steps {
-                dir("backend-master"){
+                dir("exp1/backend-master"){
                 sh "docker compose up -d"
             }
         }
