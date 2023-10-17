@@ -1,6 +1,6 @@
 services:
   spring-boot-app:
-    image:backend-master
+    image: backend-master
 
 
     ports:
